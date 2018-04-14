@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 app.listen(process.env.PORT || 3000);
 
-const mLabUrl = 'mongodb://master:password@ds159926.mlab.com:59926/shortened-urls'
+const mLabUrl = process.env.MLABURL
 
 function logObj(obj) {
   for (let x in obj) {
@@ -18,7 +18,8 @@ function logObj(obj) {
 MongoClient.connect(mLabUrl, function (err, client) {
   if (err) console.log(err);
   else {
-    logObj(client.db());
+    console.log('connected');
+    //logObj(client.db());
     //   .collection('chat').find().toArray(function(err, docs) {
     //   console.log(JSON.stringify(docs));
     // });
