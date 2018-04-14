@@ -11,6 +11,14 @@ MongoClient.connect(mLabUrl, function (err, db) {
   else db.close();
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/root.html');
+app.get('/', (req, res) => 
+  res.sendFile(__dirname + '/views/root.html')
+);
+
+app.get(/\/.+/, (req, res) => {
+  res.json({
+    original: null,
+    shortened: null,
+  });
+  res.end();
 });
