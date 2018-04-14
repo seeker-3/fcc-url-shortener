@@ -1,3 +1,4 @@
+const log = console.log;
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient
 const express = require('express')
@@ -13,14 +14,14 @@ function logObj(obj) {
 }
 
 
-MongoClient.connect(mLabUrl, function (err, db) {
+MongoClient.connect(mLabUrl, function (err, client) {
   if (err) console.log(err);
   else {
-    log(db
+    log(client.db());
     //   .collection('chat').find().toArray(function(err, docs) {
     //   console.log(JSON.stringify(docs));
     // });
-    db.close();
+    client.close();
   }
 });
 
