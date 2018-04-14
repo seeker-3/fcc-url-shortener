@@ -1,6 +1,6 @@
 dependencies:
   express: 4.16.3
-  mongodb: 3.0.6
+  mongodb: 2.2.35
 packages:
   /accepts/1.3.5:
     dependencies:
@@ -38,6 +38,10 @@ packages:
       node: '>=0.6.19'
     resolution:
       integrity: sha512-D8zmlb46xfuK2gGvKmUjIklQEouN2nQ0LEHHeZ/NoHM2LDiMk2EYzZ5Ntw/Urk+bgMDosOZxaRzXxvhI5TcAVQ==
+  /buffer-shims/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-mXjOMXOIxkmth5MCjDR37wRKi1E=
   /bytes/3.0.0:
     dev: false
     engines:
@@ -66,6 +70,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
+  /core-util-is/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -98,6 +106,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+  /es6-promise/3.2.1:
+    dev: false
+    resolution:
+      integrity: sha1-7FYjOGgDKQkgcXDDlEjiREndH8Q=
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -198,6 +210,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-4/o1e3c9phnybpXwSdBVxyeW+Gs=
+  /isarray/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -232,21 +248,23 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==
-  /mongodb-core/3.0.6:
+  /mongodb-core/2.1.19:
     dependencies:
       bson: 1.0.6
       require_optional: 1.0.1
     dev: false
     resolution:
-      integrity: sha512-EIaEyA4DEft4je4Hfa+CDswKdFhlev9V9o5KJo/nITgG6KNKz5Rxg5ZuMGEjGkMwFkydFQ3Kz0CxZ18AXhRrEg==
-  /mongodb/3.0.6:
+      integrity: sha512-Jt4AtWUkpuW03kRdYGxga4O65O1UHlFfvvInslEfLlGi+zDMxbBe3J2NVmN9qPJ957Mn6Iz0UpMtV80cmxCVxw==
+  /mongodb/2.2.35:
     dependencies:
-      mongodb-core: 3.0.6
+      es6-promise: 3.2.1
+      mongodb-core: 2.1.19
+      readable-stream: 2.2.7
     dev: false
     engines:
-      node: '>=4'
+      node: '>=0.10.3'
     resolution:
-      integrity: sha512-nEg7SnzcyobArDTXEqvI1BasY6Z45h1lyBtVMCS9gRTkbtwrDn6WcLRa+MVRYufrJXxQPkAiYJQ94eCUzit0EQ==
+      integrity: sha512-3HGLucDg/8EeYMin3k+nFWChTA85hcYDCw1lPsWR6yV9A6RgKb24BkLiZ9ySZR+S0nfBjWoIUS7cyV6ceGx5Gg==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -275,6 +293,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  /process-nextick-args/1.0.7:
+    dev: false
+    resolution:
+      integrity: sha1-FQ4gt1ZZCtP5EJPyWk8q2L/zC6M=
   /proxy-addr/2.0.3:
     dependencies:
       forwarded: 0.1.2
@@ -307,6 +329,18 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-vNYMd9Prk83gBQKVw/N5OJvIj4k=
+  /readable-stream/2.2.7:
+    dependencies:
+      buffer-shims: 1.0.0
+      core-util-is: 1.0.2
+      inherits: 2.0.3
+      isarray: 1.0.0
+      process-nextick-args: 1.0.7
+      string_decoder: 1.0.3
+      util-deprecate: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha1-BwV6y+JGeyIELTb5jFrVBwVOlbE=
   /require_optional/1.0.1:
     dependencies:
       resolve-from: 2.0.0
@@ -373,6 +407,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==
+  /string_decoder/1.0.3:
+    dependencies:
+      safe-buffer: 5.1.1
+    dev: false
+    resolution:
+      integrity: sha512-4AH6Z5fzNNBcH+6XDMfA/BTt87skxqJlO0lAh3Dker5zThcAxG6mKz+iGu308UKoPPQ8Dcqx/4JhujzltRa+hQ==
   /type-is/1.6.16:
     dependencies:
       media-typer: 0.3.0
@@ -388,6 +428,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
+  /util-deprecate/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
   /utils-merge/1.0.1:
     dev: false
     engines:
@@ -405,4 +449,4 @@ shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   express: ^4.16.3
-  mongodb: ^3.0.6
+  mongodb: ^2.2.3

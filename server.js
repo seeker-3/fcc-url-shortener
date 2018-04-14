@@ -15,11 +15,11 @@ function logObj(obj) {
 }
 
 
-MongoClient.connect(mLabUrl, function (err, client) {
+MongoClient.connect(mLabUrl, function (err, db) {
   if (err) console.log(err);
   else {
-    log(client.db().collection('urls').urls);
-    client.close();
+    log(db.collection('url'));
+    db.close();
   }
 });
 
