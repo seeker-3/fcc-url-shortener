@@ -18,7 +18,7 @@ function logObj(obj) {
 MongoClient.connect(mLabUrl, function (err, client) {
   if (err) console.log(err);
   else {
-    log(client.db().collectionName);
+    log(client.db().collection('urls').urls);
     client.close();
   }
 });
