@@ -1,11 +1,10 @@
 const log = console.log;
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient
+const {MongoClient} = require('mongodb');
 const express = require('express')
 const app = express()
 app.listen(process.env.PORT || 3000);
 
-const mLabUrl = process.env.MLABURL
+const mLabUrl = process.env.MONGODB_URI;
 
 function logObj(obj) {
   for (let x in obj) {
@@ -15,11 +14,14 @@ function logObj(obj) {
 }
 
 
-MongoClient.connect(mLabUrl, function (err, db) {
+MongoClient.connect(mLabUrl, function (err, client) {
   if (err) console.log(err);
   else {
-    log(db.collection('url'));
-    db.close();
+    client.db('fcc-url-shortener').collection('urls').find().toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      client.close();
+    });
   }
 });
 
