@@ -8,6 +8,19 @@ const pug           = require('pug');
 const express       = require('express');
 const app           = express();
 
+const getClient = url => new Promise((resolve, reject) => {
+	MongoClient.connect(url, (err, client) => {
+			if (err) reject(err);
+			resolve(client);
+	});
+}).catch(err => {throw err});
+
+const findArr = (col, query) => new Promise((resolve, reject) =>
+	col.find(query).toArray((err, arr) => {
+		if (err) reject(err);
+		resolve(arr);
+})).catch(err => {throw err});
+
 const genCode = col => new Promise((resolve, reject) => {
 	function loop() {
 		let code = Math.random() * 9000 + 1000 | 0;
@@ -18,19 +31,6 @@ const genCode = col => new Promise((resolve, reject) => {
 	}
 	loop();
 });
-
-const findArr = (col, query) => new Promise((resolve, reject) =>
-	col.find(query).toArray((err, arr) => {
-		if (err) reject(err);
-		resolve(arr);
-})).catch(err => {throw err});
-
-const getClient = url => new Promise((resolve, reject) => {
-	MongoClient.connect(url, (err, client) => {
-			if (err) reject(err);
-			resolve(client);
-	});
-}).catch(err => {throw err});
 
 app.set('view engine', 'pug');
 app.listen(port);
